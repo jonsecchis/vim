@@ -39,6 +39,14 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
+fun! ToggleColors()
+    if (&background == 'dark')
+        set background=light
+    else
+        set background=dark
+    endif
+endfun
+
 fun! GetBG()
     return synIDattr(synIDtrans(hlID('Normal')), 'bg')
 endfun

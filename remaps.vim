@@ -1,6 +1,7 @@
 nnoremap          r             :redo<CR>
 nnoremap          ;w            :<C-u>silent! move-2<CR>==
 nnoremap          ;s            :<C-u>silent! move+<CR>==
+nnoremap          ;c            :call ToggleColors()<CR>
 nnoremap          ;d            :bn<CR>
 nnoremap          ;a            :bp<CR>
 nnoremap          ,cd           :cd %:p:h<CR>
