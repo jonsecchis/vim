@@ -40,10 +40,12 @@ fun! TrimWhitespace()
 endfun
 
 fun! ToggleColors()
-    if (&background == 'dark')
-        set background=light
+    if (&background == 'light')
+       colorscheme solarized8_dark_flat
+       set background=dark 
     else
-        set background=dark
+       colorscheme solarized8_light_flat
+       set background=light
     endif
 endfun
 

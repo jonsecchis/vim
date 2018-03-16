@@ -2,7 +2,7 @@ so ~/.vim/functions.vim
 so ~/.vim/remaps.vim
 so ~/.vim/autocmds.vim
 
-colorscheme solarized8_dark_flat
+colorscheme solarized8_light_flat
 
 filetype plugin indent on
 syntax on
