@@ -4,23 +4,29 @@ fun! Startup()
     endif
 endfun
 
+fun! ChangeColors()
+    let l:bg = GetBG()
+    if has("gui_running")
+        hi EndOfBuffer guifg=bg guibg=bg
+    else
+        hi EndOfBuffer ctermbg=bg ctermfg=bg 
+    endif
+endfun
+
 fun! FType()
-
-    let shortindent = ['javascript', 'yaml', 'json']
-
     if (&ft == 'netrw')
         set nobl
+        setlocal statusline=\ %{GetCurDir()}
         vertical resize 30
     endif
 
+    let shortindent = ['javascript', 'yaml', 'json']
     if index(shortindent, &ft) >= 0
         setlocal ts=2 sts=2 sw=2 expandtab
     endif
-
 endfun
 
 fun! TrimWhitespace()
-
     let l:save = winsaveview()
     let notrim = ['vim', 'yaml']
 
@@ -33,18 +39,19 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
+fun! GetBG()
+    return synIDattr(synIDtrans(hlID('Normal')), 'bg')
+endfun
+    
+
 fun! GetCurDir()
-
     return expand('%:p:h:t')
-
 endfun
 
 fun! DelCurBuf()
-
     try
         bn | bw!#
     catch /517/
         enew | bw! #
     endtry
-
 endfunc

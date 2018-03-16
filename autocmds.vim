@@ -18,3 +18,8 @@ augroup AutoSaveFolds
     autocmd BufWinLeave ?* mkview
     autocmd BufWinEnter ?* silent! loadview
 augroup END
+
+augroup ColorSchemeChanges
+    autocmd!
+    autocmd ColorScheme * call ChangeColors()
+augroup END
