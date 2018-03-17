@@ -40,12 +40,12 @@ fun! TrimWhitespace()
 endfun
 
 fun! ToggleColors()
-    if (&background == 'light')
-       colorscheme solarized8_dark_flat
-       set background=dark 
+    if (g:theme == 'light')
+        let g:theme = 'dark'
+        colorscheme solarized8_dark_flat
     else
-       colorscheme solarized8_light_flat
-       set background=light
+        let g:theme = 'light'
+        colorscheme solarized8_light_flat
     endif
 endfun
 

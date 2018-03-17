@@ -1,8 +1,8 @@
 nnoremap          r             :redo<CR>
 nnoremap          .w            :<C-u>silent! move-2<CR>==
 nnoremap          .s            :<C-u>silent! move+<CR>==
-nnoremap          cc            :call ToggleColors()<CR>
-nnoremap          cd            :cd %:p:h<CR>
+nnoremap          ,x            :call ToggleColors()<CR>
+nnoremap          ,cd           :cd %:p:h<CR>
 nnoremap <silent> ;q            :call DelCurBuf()<CR>
 nnoremap          ;d            :bn<CR>
 nnoremap          ;a            :bp<CR>
