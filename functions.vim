@@ -5,7 +5,9 @@ fun! Startup()
 endfun
 
 fun! ChangeColors()
-    let l:bg = GetBG()
+    let l:bg = GetHiAttr('Normal', 'bg')
+    let g:tabbg = GetHiAttr('TabLine', 'bg')
+    let g:tabfg = GetHiAttr('TabLine', 'fg')
     if has("gui_running")
         hi EndOfBuffer guifg=bg guibg=bg
     else
@@ -49,8 +51,8 @@ fun! ToggleColors()
     endif
 endfun
 
-fun! GetBG()
-    return synIDattr(synIDtrans(hlID('Normal')), 'bg')
+fun! GetHiAttr(hi, attr)
+    return synIDattr(synIDtrans(hlID(a:hi)), a:attr)
 endfun
     
 
