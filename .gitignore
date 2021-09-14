@@ -1,0 +1,10 @@
+.netrwhist
+
+/plugged/*
+!/plugged/.gitkeep
+
+/swap/*
+!/swap/.gitkeep
+
+/view/*
+!/view/.gitkeep
