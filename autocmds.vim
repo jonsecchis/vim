@@ -23,3 +23,15 @@ augroup ColorSchemeChanges
     autocmd!
     autocmd ColorScheme * call ChangeColors()
 augroup END
+
+augroup RedrawOnCursorMovedI
+    autocmd!
+    autocmd CursorMovedI *.mono redraw! 
+augroup END
+
+" Align GitHub-flavored Markdown tables
+augroup FormatMakdown
+    autocmd!
+    autocmd FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+augroup END
+

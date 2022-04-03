@@ -24,15 +24,19 @@ fun! FType()
         setlocal statusline=\ %{GetCurDir()}
     endif
 
-    let shortindent = ['javascript', 'yaml', 'json']
-    if index(shortindent, &ft) >= 0
-        setlocal ts=2 sts=2 sw=2 expandtab
+    if (&ft == 'yml')
+        setlocal syntax=yml 
     endif
+
+    " let shortindent = ['javascript', 'yaml', 'json', 'jon', 'typescript']
+    " if index(shortindent, &ft) >= 0
+    "    setlocal ts=2 sts=2 sw=2 expandtab
+    " endif
 endfun
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
-    let notrim = ['vim', 'yaml', 'mono', 'monolog']
+    let notrim = ['vim', 'yaml', 'mono', 'monolog', 'md', 'markdown']
 
     %s/\($\n\s*\)\+\%$//e
 

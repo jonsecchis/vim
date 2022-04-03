@@ -15,6 +15,8 @@ let g:netrw_liststyle = 0
 let g:netrw_browse_split = 0
 let g:netrw_altv = 0
 
+set backupcopy=yes
+set noswapfile
 set shortmess=I
 set fileencoding=utf-8
 set hidden
@@ -41,8 +43,8 @@ set smartindent
 set autoindent
 set nowrap
 set fillchars+=vert:\ 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 hi def link PmenuSel TabLine
